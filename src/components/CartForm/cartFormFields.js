@@ -1,0 +1,55 @@
+import style from './cartForm.module.scss'
+
+export const cartFormFields = [
+    {
+        tagType: 'regular',
+        label: "Username",
+        labelClass: style.form__label,
+        inputClass: style.form__input,
+        errorClass: style.form__error,
+        name: "firstName",
+        type: "text",
+        placeholder: "Kanan",
+    },
+    {
+        tagType: 'regular',
+        label: "Username",
+        labelClass: style.form__label,
+        inputClass: style.form__input,
+        errorClass: style.form__error,
+        name: "lastName",
+        type: "text",
+        placeholder: "Karimli",
+    },
+    {
+        tagType: 'regular',
+        label: "Age",
+        labelClass: style.form__label,
+        inputClass: style.form__input,
+        errorClass: style.form__error,
+        name: "age",
+        type: "number",
+        placeholder: "20",
+    },
+    {
+        tagType: 'regular',
+        label: "Address",
+        labelClass: style.form__label,
+        inputClass: style.form__input,
+        errorClass: style.form__error,
+        name: "address",
+        type: "text",
+        placeholder: "Baku",
+    },
+    {
+        tagType: 'masked',
+        label: "Phone",
+        labelClass: style.form__label,
+        inputClass: style.form__input,
+        errorClass: style.form__error,
+        name: "phone",
+        type: "string",
+        format: "(###) ###-##-##",
+        mask: "#",
+    }
+]

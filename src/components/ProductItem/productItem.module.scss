@@ -1,0 +1,193 @@
+$accent-main: orange;
+$bg-btn-hover: orangered;
+$bg-btn-active: #798d30;
+$accent-light: #e7efcd;
+$color-main-bright: #fff;
+
+.product {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: -0px 3px 15px rgba(161, 191, 54, .3);
+    overflow: hidden;
+    transition: box-shadow .3s;
+
+    &:hover {
+        box-shadow: -0px 10px 15px rgba(161, 191, 54, .5);
+
+        .product__img img {
+            scale: 1.2;
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    &__name {
+        font-size: 1.5rem;
+        line-height: 150%;
+        padding-right: 2.5rem;
+    }
+
+    &__SKU {
+        position: absolute;
+        top: -1rem;
+        right: -1rem;
+        padding: .5rem;
+        font-size: .8rem;
+        border-radius: 0 1rem;
+        background: $accent-light;
+        color: $accent-main;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-grow: 1;
+        flex-wrap: wrap;
+    }
+
+    .productRow &__body {
+        flex-direction: row;
+    }
+
+    &__img {
+        width: 100%;
+        height: 20rem;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: scale .5s;
+        }
+    }
+
+    .productRow &__img {
+        overflow:visible;
+        width: auto;
+        height: 5rem;
+    }
+
+    &__descr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .productRow &__descr {
+        flex-direction: row;
+        justify-content: space-between;
+        flex: 100%;
+        max-width: 50%;
+    }
+
+    &__color {
+        font-size: .8rem;
+    }
+
+    &__price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $accent-main;
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: .3rem;
+
+        &Sign {
+            font-size: 1rem;
+
+            &:not(:last-child) {
+                margin-right: 1rem;
+                ;
+            }
+        }
+    }
+
+    &__amount {
+        font-size: 1rem;
+        font-weight: 700;
+        color: $accent-main;
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .productRow &__btns {
+        flex-direction: column;
+    }
+
+    &__favBtn {
+        width: 2rem;
+        height: 2rem;
+
+        & svg path {
+            transition: opacity .3s;
+        }
+
+        &:hover svg path {
+            opacity: .5;
+        }
+
+        &:active svg path {
+            opacity: 1;
+        }
+    }
+
+    &__cartBtn {
+        font-size: 1.2rem;
+        background: $accent-main;
+        color: $color-main-bright;
+        padding: .3rem 1rem .5rem;
+        border-radius: 1.5rem;
+        transition: background-color .3s;
+
+        &:hover {
+            background: $bg-btn-hover;
+        }
+
+        &:active {
+            background: $bg-btn-active;
+        }
+    }
+
+    &__delBtn {
+        position: relative;
+        width: 2rem;
+        height: 2rem;
+
+        &::before,
+        &::after {
+            left: 50%;
+            top: 50%;
+            position: absolute;
+            content: '';
+            height: 3px;
+            width: 70%;
+            background: $color-main-bright;
+        }
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+}

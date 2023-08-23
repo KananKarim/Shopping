@@ -1,0 +1,6 @@
+export * from './MainLayout'
+export * from './Home/Home'
+export * from './Cart/Cart'
+export * from './Favorites/Favorites'
+export * from './Product/Product'
+export * from './NotFound/NotFound'

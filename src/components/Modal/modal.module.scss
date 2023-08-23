@@ -1,0 +1,126 @@
+$bg-main: #fff;
+$bg-header: #eeeeee;
+$bg-btn: #a1bf36;
+$bg-btn-secondary: #829639;
+$bg-btn-hover: #adca44;
+$bg-btn-active: #798d30;
+$color-main: #000;
+$color-main-bright: #fff;
+
+@keyframes showModal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scale {
+    from {
+        scale: 50%;
+    }
+
+    to {
+        scale: 100%;
+    }
+}
+
+.modal {
+    z-index: 10;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #00000050;
+    animation: showModal .3s;
+
+    &__content {
+        border-radius: 5px;
+        max-width: 480px;
+        text-align: center;
+        overflow: hidden;
+        animation: scale .3s;
+        background: $bg-main;
+        color: $color-main;
+    }
+
+    &__header {
+        padding: 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: $bg-header;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 700;
+        text-align-last: left;
+    }
+
+    &__body {
+        padding: 25px;
+        line-height: 170%;
+
+        &>*:not(:last-child) {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+
+        &>button {
+            border-radius: 5px;
+            padding: 10px;
+            min-width: 100px;
+            transition: background-color .3s;
+            background: $bg-btn;
+            color: $color-main-bright;
+
+            &:last-child {
+                background: $bg-btn-secondary;
+            }
+
+            &:hover {
+                background: $bg-btn-hover;
+            }
+
+            &:active {
+                background: $bg-btn-active;
+            }
+        }
+    }
+}
+
+
+.close {
+    width: 30px;
+    height: 30px;
+    position: relative;
+
+    &::before,
+    &::after {
+        left: 0;
+        top: 50%;
+        position: absolute;
+        content: '';
+        height: 1px;
+        width: 100%;
+        background: $color-main;
+    }
+
+    &::before {
+        transform: rotate(45deg) translateY(-50%);
+    }
+
+    &::after {
+        transform: rotate(-45deg) translateY(-50%);
+    }
+}
